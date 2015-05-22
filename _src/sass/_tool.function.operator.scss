@@ -1,0 +1,12 @@
+@function plus ($num, $num2) {
+	@return $num+$num2;
+}
+@function minus ($num, $num2) {
+	@return $num-$num2;
+}
+@function multipl ($num, $num2) {
+	@return $num*$num2;
+}
+@function division ($num, $num2) {
+	@return $num/$num2;
+}

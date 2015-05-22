@@ -1,0 +1,33 @@
+@mixin grids ($name, $cols: $grid-cols) {
+  @if $name != pc {
+    @for $i from 1 through $cols {
+        .c-gm__#{$i} {
+          width: grid($i);
+        }
+    }
+  }@else {
+    @for $i from 1 through $cols {
+      .c-g__#{$i} {
+        @extend %grid-base;
+        width: grid($i);
+        width: grid-st($i);
+      }
+    }
+  }
+}
+//MediaQuerues
+@mixin media ($breakName, $AryPoints: $break-points) {
+  @if map-has-key($AryPoints, $breakName) {
+    @if length(map-get($AryPoints, $breakName)) != 1 {
+      $breakPoint: map-get(map-get($AryPoints, $breakName), min), map-get(map-get($AryPoints, $breakName), max);
+      @media screen and (min-width: nth($breakPoint, 1)) and (max-width: nth($breakPoint, 2)) {
+        @content;
+      }
+    } @else {
+      $breakPoint: map-get($AryPoints, $breakName);
+      @media screen and (min-width: $breakPoint) {
+        @content;
+      }
+    }
+  }
+}

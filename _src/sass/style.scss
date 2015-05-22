@@ -1,0 +1,14 @@
+@import "./config";
+@import "./function.operator";
+@import "./function.basic";
+@import "./mediaQueries";
+%grid-base {
+  display: block;
+  float: left;
+}
+
+@include grids(pc);
+
+@include media(sp){
+  @include grids(sp);
+}

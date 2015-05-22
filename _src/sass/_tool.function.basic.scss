@@ -1,0 +1,11 @@
+@function grid($val, $cols: $grid-cols){
+	 $wi: division(100, $cols);
+   $basic: multipl(multipl($wi, $val), 1%);
+   @return $basic;
+}
+
+@function grid-st($val, $cols: $grid-cols){
+   $iewi: division($max-width, $cols);
+	 $basic-ie: division($iewi, $val);
+   @return $basic-ie;
+}

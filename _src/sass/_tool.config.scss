@@ -1,0 +1,14 @@
+//grid
+$max-width: 1024px;
+$grid-cols: 12;
+$grid: grids();
+$grid-ie: stGrids();
+
+//break point
+$break-points: (
+  pc: 1024px,
+  sp: (
+    min: 320px,
+    max: 640px
+  )
+);
